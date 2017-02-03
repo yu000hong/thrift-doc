@@ -11,8 +11,8 @@ grammar Thrift;
 }
 
 document
-	:   (statement NewLine*)* EOF
-	;
+    :   (statement NewLine*)* EOF
+    ;
 
 statement
     :   comment
@@ -26,8 +26,8 @@ header
     ;
 
 include
-	:   'include' String
-	;
+    :   'include' String
+    ;
 
 namespace
     :   'namespace' ('java'|'*') Identifier
@@ -64,7 +64,6 @@ enumItem
 unionDefinition
     :   'union' Identifier '{' fieldItem* '}'
     ;
-
 
 exceptionDefinition
     :   'exception' Identifier '{' fieldItem* '}'
@@ -197,26 +196,26 @@ NewLine
     ;
 
 Identifier
-	:( Letter | '_' ) ( Letter | Digit | '.' | '_' )*
-	;
+    :   ( Letter | '_' ) ( Letter | Digit | '.' | '_' )*
+    ;
 
 String
-	:   '"' (~'"')* '"'
-	|   '\'' (~'\'')* '\''
-	;
+    :   '"' (~'"')* '"'
+    |   '\'' (~'\'')* '\''
+    ;
 
 Letter
-	:	[A-Z] | [a-z]
-	;
+    :   [A-Z] | [a-z]
+    ;
 
 Digit
-	:	[0-9]
-	;
+    :   [0-9]
+    ;
 
 ListSeparator
-	:	Comma
-	|   Semicolon
-	;
+    :   Comma
+    |   Semicolon
+    ;
 
 LeftSquareBracket
     :   '['
